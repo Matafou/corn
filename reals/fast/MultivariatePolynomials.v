@@ -1181,7 +1181,9 @@ Proof.
    apply zero_AbsSmall.
    simpl.
    rewrite -> CRle_Qle; auto with *.
-  rstepl ([0][*](x[-]y))%CR.
+   transitivity ([0][*](x[-]y))%CR.
+   symmetry.
+   rational.
   apply mult_wdl.
   destruct Hb as [Hb0 Hb1].
   apply: leEq_imp_eq.
